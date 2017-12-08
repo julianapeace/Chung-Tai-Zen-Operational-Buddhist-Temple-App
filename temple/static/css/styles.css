@@ -1,0 +1,10 @@
+body{
+  background-color: #bdbdbd;
+  /*background:url('./img/gray-mountains.jpg') no-repeat center;*/
+}
+.header-wrapper{
+  border: 2px solid white;
+}
+.content-wrapper{
+  border: 2px solid white;
+}

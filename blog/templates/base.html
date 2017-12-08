@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %} {% load material_form %} {% include 'material/includes/material_css.html' %} {% include 'material/includes/material_js.html' %}
+  <link rel="shortcut icon" href="{% static 'favicons/favicon.ico' %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{% static 'js/temple.js' %}">
+  <title>
+    {% block title %} {% endblock %}
+  </title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm fixed-top"> -->
+      <nav class="navbar fixed-top navbar-expand-md navbar-toggleable-sm navbar-inverse bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">Chungtai</a>
+        <!--  Drawer icon shows up in responsive mode but not working****-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/mail_sandbox">Mail Sandbox</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/graphql">Graphql</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.get_username }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="{% url 'password_reset' %}?next={{request.path}}">Change Password</a>
+                {% if user.is_staff %}<a class="dropdown-item" href="/admin">Admin</a>{% else %}{% endif %}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+              </div>
+            </li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li> {% endif %}
+          </ul>
+        </div>
+      </nav>
+  </div>
+  </div>
+
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    {% block content %}{% endblock %}
+  </div>
+  </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.1/typeit.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script src="{% static 'material/js/jquery.js' %}"></script>
+
+</body>
+
+</html>

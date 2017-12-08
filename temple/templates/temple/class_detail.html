@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Class Details View{% endblock %}
+{% block content%}
+
+<div class="header-wrapper">
+  <h1>Title: {{class.name}}</h1>
+</div>
+<div class="content-wrapper">
+  <h2>This is a {{class.level}} class.</h2>
+  <p><strong>Date: </strong>{{class.start_date}}-{{class.end_date}}</p>
+  <p class="text-muted">id: {{class.id}}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form class="form" action="/your-name/" method="post">
+  <h2>Mail Sandbox</h2>
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="OK">
+</form>
+{% endblock %}

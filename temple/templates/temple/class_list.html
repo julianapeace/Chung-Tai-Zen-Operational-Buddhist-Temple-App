@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Class List{% endblock %}
+{% block content %}
+{% load static %}
+<img src="{% static 'img/gray-mountains.jpg' %}" alt="chungtai zen center" style="width:555px;height:540px;"/>
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<!--
+
+This is an awkward as hell django generic list view. It weirdly requires this file to be in it's own directory named after the app.
+
+Unnecessary filing, I say. But cool to know about.
+-->
+<div class="header-wrapper">
+  <h1>Hello, this is class list page. </h1>
+</div>
+<div class="content-wrapper">
+  {% if class_list %}
+  <ul>
+    {% for class in class_list %}
+    <li><a href="{{class.get_absolute_url}}">{{class.name}}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}
