@@ -56,3 +56,25 @@ class Profile(models.Model):
         if created:
             Profile.objects.create(user=instance)
         instance.profile.save()
+
+class Volunteer(models.Model):
+    sector_name = models.CharField(max_length=50)
+    user = models.ForeignKey(Profile, null=True)
+
+    def __str__(self):
+        return self.sector_name
+
+class Class(models.Model):
+    CLASS_LEVELS = (
+        ('Beginners','Beginners'),
+        ('Intermediate','Intermediate'),
+        ('Advanced','Advanced'),
+        ('Children','Children'),
+    )
+    name = models.CharField(max_length=50, help_text="level + start date")
+    level = models.CharField(max_length=30, choices = CLASS_LEVELS)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return self.name

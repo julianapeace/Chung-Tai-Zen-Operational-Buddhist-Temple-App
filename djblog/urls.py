@@ -25,16 +25,16 @@ import temple.views
 #Django-material front-end starter templates
 from material.frontend import urls as frontend_urls
 
-#Django built in auth views
-from django.contrib.auth.views import password_reset
-
 urlpatterns = [
     zen_url('admin/', admin.site.urls),
     zen_url('', include(frontend_urls)),
     zen_url('', blog.views.index, name='home'),
-    zen_url('your-name/', blog.views.print_name),
-    # zen_url('accounts/', include('django.contrib.auth.urls')),
-    zen_url('accounts/password/reset/', password_reset),
+    zen_url('masters/', blog.views.masters),
+    zen_url('meditate/', blog.views.meditate),
+    zen_url('meditate/<slug>', blog.views.meditate_classes),
+    zen_url('volunteer/', blog.views.volunteer),
+    zen_url('donate/', blog.views.donate),
+    zen_url('accounts/', include('django.contrib.auth.urls')),
     zen_url('signup/', blog.views.signup, name='signup'),
     zen_url('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     zen_url('posts/<slug>/', blog.views.post_list),
@@ -44,13 +44,9 @@ urlpatterns = [
     zen_url('account_activation_sent/', blog.views.account_activation_sent, name='account_activation_sent'),
     zen_url('activate/<str:uidb64>/<str:token>', blog.views.activate, name="activate"),
     zen_url('home/', temple.views.temple_index),
-    zen_url('mail_sandbox/', blog.views.mail_sandbox),
+    zen_url('contact/', blog.views.contact),
+    zen_url('sandbox/', blog.views.sandbox),
     zen_url('classes/', temple.views.classes),
     zen_url('classes/all/', temple.views.ClassListView.as_view(), name='class'),
     zen_url('classes/all/<int>/', temple.views.class_detail_view),
-    # zen_url('volunteer/', temple.views.volunteer),
-    # zen_url('volunteer/<slug>', temple.views.volunteer_sector),
-    # zen_url('donate/', temple.views.donate),
-    # zen_url('donate/<slug>', temple.views.donate_sector),
-
 ]

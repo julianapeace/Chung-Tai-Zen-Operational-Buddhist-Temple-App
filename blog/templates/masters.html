@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Chungtai Zen Masters{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+      <h1 class="header-tag">Meet the Zen Masters</h1>
+    </div>
+    <div class="col-lg-9">
+      <div class="card-deck content-background">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'img/masters/jian_tan_fa_shi.jpg'%}" alt="Chung Tai Zen Center Houston Jian Tan Fa Shi Zen Master">
+          <div class="card-body">
+            <h4 class="card-header">Venerable Jian Tan</h4>
+            <p class="card-text">Abbot</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'img/masters/jian_gong_fa_shi.jpg'%}" alt="Chung Tai Zen Center Houston Jian Gong Fa Shi Zen Master">
+          <div class="card-body">
+            <h4 class="card-header">Venerable Jian Gong</h4>
+            <p class="card-text">Vice Abbot</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'img/masters/jian_mian_fa_shi.jpg'%}" alt="Chung Tai Zen Center Houston Jian Mian Fa Shi Zen Master">
+          <div class="card-body">
+            <h4 class="card-header">Venerable Jian-Mian</h4>
+            <p class="card-text">Executive Master</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

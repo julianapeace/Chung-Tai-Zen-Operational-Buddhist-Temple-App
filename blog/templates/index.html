@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="jumbotron">
-  <h1 class="display-2">Chung Tai Zen Center of Houston</h1>
+  {% load static %}
+  <div class="donate-icon">
+    <!-- MUST ADD TOOLTIP HERE -->
+    <a href="/donate">
+    <img src="{% static 'img/donate.png' %}" alt="Chungtai Zen Center Houston Donation">
+  </a>
+  </div>
+  <h1 class="display-3">Chungtai Zen Center of Houston</h1>
   <h2>中台禪寺德州分院普德精舍</h2>
   <p id="demo"></p>
   <p class="lead">
@@ -12,10 +19,98 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="myButton" href="/meditate">Meditate</a>
+    <a class="myButton" href="/volunteer">Volunteer</a>
   </p>
 </div>
+
+<div class="myDiv">
+<div class="popular-topics">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="hint_of_color" style="width: 100%;"></div>
+        <br>
+        <h4 class="display-5">Popular Topics</h4>
+        <hr class="my-4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">laptop</i>
+        </div>
+        <div class="item">
+          <h6>Digital Identity</h6>
+          <p>Info about meditation classes</p>
+        </div>
+      </div>
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">landscape</i>
+        </div>
+        <div class="item">
+          <h6>Meditation Classes</h6>
+          <p>Info about meditation classes</p>
+        </div>
+      </div>
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">landscape</i>
+        </div>
+        <div class="item">
+          <h6>Meditation Classes</h6>
+          <p>Info about meditation classes</p>
+          <p>Add Pagoda and Chungtai Chan Monaster</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">restaurant</i>
+        </div>
+        <div class="item">
+          <h6>Veggie Cuisine</h6>
+          <p>Info about meditation classes</p>
+          <p>Add Meditation Workshop</p>
+        </div>
+      </div>
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">restaurant</i>
+        </div>
+        <div class="item">
+          <h6>Veggie Cuisine</h6>
+          <p>Info about meditation classes</p>
+          <p>Add Half-day retreats</p>
+        </div>
+      </div>
+      <div class="col-lg-4 popular-topics-wrapper">
+        <div class="icon">
+          <i class="material-icons">local_florist</i>
+        </div>
+        <div class="item">
+          <h6>The Garden</h6>
+          <p>Info about meditation classes</p>
+          <p>Add Blessing & Dedication Ceremonies</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <h1 id="example1"></h1>
+<div class="hint_of_color" style="width:100%;"></div>
+<div class="content-calendar">
+  <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height={{height}}&amp;wkst=1&amp;bgcolor=%23{{bgcolor}}&amp;src=zencthouston%40gmail.com&amp;color=%23{{color}}&amp;ctz=America%2FChicago" style="border-width:0" width="{{width}}" height="{{height}}" frameborder="0" scrolling="yes"></iframe>
+</div>
+
 <p class="text-muted">>Terminal</p>
+<div class="quote">
+  <p class="text-muted">{{quote}}</p>
+</div>
 
 {% endblock %}

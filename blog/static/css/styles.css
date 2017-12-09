@@ -1,60 +1,169 @@
 body{
   /*background-color: #bdbdbd;*/
   background: linear-gradient(
-    rgba(0,0,0,0.87),
-    rgba(0,0,0,0.87)
+    rgba(0,0,0,0.30),
+    rgba(0,0,0,0.30)
     ),
     url('../img/gray-mountains-1280x853.jpg') no-repeat fixed center
     ;
     background-size: cover;
-    background-blend-mode: soft-light;
+    /*background-blend-mode: soft-light;*/
+    background-blend-mode: multiply;
 }
-
-
+li{
+  display: flex;
+  justify-content: center;
+}
 .header-wrapper{
   border: 2px solid white;
 }
 .content-wrapper{
+  /*border: 2px solid white;*/
+  color: #4d4d4d;
+}
+.class-description{
+  color: RGBA(255,255,255,0.87);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.18);
+}
+.class-description>.material-icon{
+  color: #ffffff;
+}
+.header-tag{
+  /*Add to H* tags to give extra padding*/
+  text-shadow: 0 1px 1px rgba(0,0,0,0.18);
+  padding: 20px;
+}
+.myDiv{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /*border: 2px solid white;*/
+}
+.popular-topics{
   border: 2px solid white;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+  margin: 10px;
+  width: 150vh;
+}
+.icon{
+  /*border: 1px solid blue;*/
+  display: flex;
+  justify-content: flex-start;
+}
+.item{
+  padding: 5px;
+}
+.popular-topics-wrapper{
+  display: flex;
+  align-items: flex-start;
 }
 /*ALL FORM CSS*/
 .form{
-  /*TO DO: center the forms*/
-background-color: RGBA(255,255,255,.67);
-padding: 10px;
-margin: 0 auto;
-margin-top:70px;
-margin-bottom:50px;
-width: 50%;
-max-width: 100vh;
+  background-color: RGBA(255,255,255,.67);
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom:50px;
+  width: 50%;
+  max-width: 100vh;
+}
+.content-background{
+  text-align: center;
+  background-color: RGBA(255,255,255,.67);
+  margin: 0 auto;
+  padding: 20px;
+}
+.content-calendar{
+  display: block;
+  background-color: RGBA(255,255,255,.67);
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+.content-calendar{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  }
+.brand-bar{
+  /*border: 1px solid white;*/
+}
+.hint_of_color{
+  /*border: 1px solid white;*/
+  height: 4px;
+  width: 200vh;
+  background-color: #B71C1C;
+}
+.brand-bar>img{
+  width: 30%;
 }
 .jumbotron{
   padding-top:50px;
   background-color:transparent;
   color: white;
   text-align: center;
-  text-shadow: 0.5px 0.5px rgba(0,0,0,0.2);
+  /*border: 2px solid white;*/
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
+.jumbotron>.donate-icon>a>img{
+  position: absolute;
+  top:6em;
+  right:2em;
+  width: 80px;
+  border: 2px solid white;
+  border-radius: 50px;
+  box-shadow:0 1px 1px rgba(0,0,0,0.8);
 }
 /*My Button CSS*/
 .myButton {
-background-color:#948a81;
-display:inline-block;
-cursor:pointer;
-color:#ffffff;
-font-family:Arial;
-font-size:15px;
-padding:9px 24px;
-text-decoration:none;
-text-shadow:0px 1px 1px #4d4242;
+  /*background-color:#66615b;*/
+  background-color:#B71C1C;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:9px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 1px #4d4242;
+  box-shadow:0px 2px 4px rgba(0,0,0,0.18);
 }
 .myButton:hover {
-background-color:#66615b;
-color:#ffffff;
-text-decoration:none;
+  position:relative;
+  /*background-color:#948a81;*/
+  background-color:#E53935;
+  color:#ffffff;
+  text-decoration:none;
+  text-shadow:0px 1px 2px #4d4242;
+  bottom: 1px;
 }
 .myButton:active {
-position:relative;
-top:1px;
+  position:relative;
+  text-decoration:none;
+  top:1px;
+}
+.quote{
+  display: block;
+  background-color: #222;
+  width: 100%;
+  bottom:1em;
+  text-align:center;
+}
+.little-monk{
+  z-index: -3;
+  position: fixed;
+  bottom:0;
+  /*background: #1F494D;*/
+}
+
+.little-monk img{
+  mix-blend-mode: exclusion;
+  /*filter: grayscale(100%);*/
 }
 
 
@@ -73,11 +182,53 @@ top:1px;
 
 
 
+/*Material UI: Red
+500
+#F44336
+50
+#FFEBEE
+100
+#FFCDD2
+200
+#EF9A9A
+300
+#E57373
+400
+#EF5350
+500
+#F44336
+600
+#E53935
+700
+#D32F2F
+800
+#C62828
+900
+#B71C1C
+A100
+#FF8A80
+A200
+#FF5252
+A400
+#FF1744
+A700
+#D50000*/
 
-
-
-
-
-
-
-/**/
+@media screen and (max-width: 480px) {
+  /*If viewport is 480px wide or wider*/
+    body {
+        background-color: lightgreen;
+    }
+}
+@media only screen and (max-width: 500px){
+  .brand-bar>img{
+    width: 20%;
+  }
+  .jumbotron>.donate-icon>a>img{
+    width: 60px;
+    z-index: 3;
+    position:absolute;
+    bottom:0;
+    right:0;
+  }
+}

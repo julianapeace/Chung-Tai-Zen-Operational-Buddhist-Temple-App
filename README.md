@@ -51,3 +51,6 @@ Things I worked on today:
 - skeleton front-end
 - hooking up email service and then integrating it into sign up workflow, password reset, and a contact form
 #### December 8
+Today I made a lot of progress on the front-end. Added a pop of color, little UI details that go a long way, very happy with how it's looking. Added a random quote generator. Created an little web image scraper to collect little-monk images =)
+I closing today on a pause. I'm having trouble wrapping my head around how to organize the models. What is the best way to organize it so that it'll grow easily in the long run?
+#### December 9
