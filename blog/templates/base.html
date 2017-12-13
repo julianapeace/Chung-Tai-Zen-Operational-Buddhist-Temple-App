@@ -4,12 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% load static %} {% load material_form %} {% include 'material/includes/material_css.html' %} {% include 'material/includes/material_js.html' %}
+  {% load static %}
+  {% load material_form %}
+  {% include 'material/includes/material_css.html' %}
   <link rel="shortcut icon" href="{% static 'favicons/favicon.ico' %}" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="{% static 'js/temple.js' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/poop.css' %}"> -->
+  <script scr="{% static 'js/temple.js' %}"></script>
+
   <title>
     {% block title %} {% endblock %}
   </title>
@@ -34,11 +38,39 @@
 
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="/sandbox">Sandbox</a></li>
-            <li class="nav-item"><a class="nav-link" href="/masters">Masters</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="/graphql">Graphql</a></li>
-            <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="DanaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dana</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="DanaDropdown">
+                <a class="dropdown-item" href="/volunteer">Volunteer</a>
+                <a class="dropdown-item" href="/donate">Donation</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="AboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="AboutDropdown">
+                <a class="dropdown-item" href="/about">History</a>
+                <a class="dropdown-item" href="/contact">Contact Us</a>
+                <a class="dropdown-item" href="/masters">Masters</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="AboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Teachings</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="AboutDropdown">
+                <a class="dropdown-item" href="/teachings/sutras">Sutras and Gathas</a>
+                <a class="dropdown-item" href="/teachings/arhats">Arhats</a>
+                <a class="dropdown-item" href="/teachings/buddhiststories">Buddhist Stories</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="ClassesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classes</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ClassesDropdown">
+                <a class="dropdown-item" href="/meditate">All Classes</a>
+                <a class="dropdown-item" href="/meditate/beginner">Beginners</a>
+                <a class="dropdown-item" href="/meditate/intermediate">Intermediate</a>
+                <a class="dropdown-item" href="/meditate/advanced">Advanced</a>
+                <a class="dropdown-item" href="/meditate/children">Children</a>
+              </div>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +78,10 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{% url 'password_reset' %}?next={{request.path}}">Change Password</a>
-                {% if user.is_staff %}<a class="dropdown-item" href="/admin">Admin</a>{% else %}{% endif %}
+                <a class="dropdown-item" href="/myclasses">My Classes</a>
+                {% if user.is_staff %}<a class="dropdown-item" href="/admin">Admin</a>
+                <a class="dropdown-item" href="/graphql">Graphql</a>
+                {% else %}{% endif %}
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
               </div>
@@ -69,9 +104,8 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.1/typeit.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  <script src="{% static 'material/js/jquery.js' %}"></script>
+  <!-- <script src="{% static 'material/js/jquery.js' %}"></script> -->
+  <script src="https://js.stripe.com/v3/"></script>
 
 </body>
 

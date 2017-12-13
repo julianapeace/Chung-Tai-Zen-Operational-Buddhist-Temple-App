@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-12">
+      <h1>Dana</h1>
+      <div class="class-description">
+      <p> <strong>SUPPORT THE ZEN CENTER </strong></p>
+        <p>
+        Chung Tai Zen Center of Houston offers classes, meditation retreats, workshops, and others programs at no charge as a service to the community. It is supported by the generous offerings (“dana”) from individuals. “Dana” is the first of the six perfections a bodhisattva practices; your offering will help sustain the Zen Center and help build future Chung Tai Zen Centers in the U.S.</p>
+        <p>
+        Chung Tai International Chan Buddhist Association (of which the Zen Center of Sunnyvale is a branch) is a 501(c)(3) nonprofit religious organization; your donations are fully tax deductible.</p>
+      </div>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-12">
+      <h2>Shop  & Give - Sign-up with "AmazonSmile"</h2>
+      <p>Shop at AmazonSmile and Amazon will make a donation to Chung Tai Zen Center of Sunnyvale.</p>
+
+      <p>AmazonSmile is the same Amazon you know. Same products, same prices, same service. Whenever you shop on AmazonSmile,  Amazon will donate 0.5% of the price of your eligible AmazonSmile purchases to Chung Tai International Chan Buddhist Association. Tens of millions of products on AmazonSmile are eligible for donations. Please sign up and support the Zen Center!   >> Click here  to get started and to read more. Forward this link to your family members,  friends, and colleagues and invite them to support the Zen Center too!</p>
+
+
+      <form action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_jelISkBRCRNmH4QluS2Qu8tS"
+        data-amount="2000"
+        data-name="Chungtai Zen Center"
+        data-description="2 widgets"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto"
+        data-zip-code="true">
+      </script>
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-light" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=sunnyvale%40ctzen%2eorg&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;lc=US&amp;bn=PP%2dDonationsBF&amp;charset=UTF%2d8" target="_blank">Pay with PayPal<img src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" alt=" " width="110" height="23" style="display: none;" /></button>
+
+{% endblock %}

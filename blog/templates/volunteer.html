@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title%}Volunteer - Chungtai Zen Center {% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-12">
+      <h1>Meritorious Volunteer</h1>
+      <div class="little-monk">
+        {% load static %}
+        <img src="{% static 'img/little-monk/little-monk-40.jpg'%}" alt="Chungtai Zen Center Little Monk">
+      </div>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-12">
+
+      <div class="form">
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            {# form.sector_name #}
+            <button class="myButton" type="submit">Sign up</button>
+        </form>
+        <!-- <form method="post">
+          <div class="form-group">
+            <label for="sector">Sector</label>
+            <select class="form-control" id="sector">
+              <option>Acolyte</option>
+              <option>Kitchen</option>
+              <option>Dining Hall</option>
+              <option>Receptionist</option>
+              <option>Tablets</option>
+            </select>
+          </div>
+        </form> -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Chungtai Zen Masters{% endblock %}
+{% block title %}CT Meditation Classes{% endblock %}
 {% load static %}
 {% block content %}
 <div class="container-fluid">
@@ -29,7 +29,11 @@ Weekly classes of different levels, starting every four months</li>
             <p class="card-text">No prior meditation experience needed.</p>
             <p class="card-text"><strong>Meditation methods: </strong>Breath-counting and mindfulness of breathing</p>
             <p class="card-text"><strong>Topics covered: </strong>Introduction to Buddhism and Zen, Chung Tai Chan practices, karma and causality, the Four Noble Truths (suffering, the causes of suffering, nirvana, the Noble Eightfold Path), and Three Refuges.</p>
-            <a class="myButton" href="/meditate/beginner">Beginner</a>
+            {% if classauth.0 == 0 %}
+            <a class="myButton" href="/meditate/beginner/signup">Sign Up Beginner</a>
+            {% else %}
+            <a class="yesButton" href="/myclasses/meditate/beginner/material">See Class</a>
+            {% endif %}
           </div>
         </div>
         <div class="card">
@@ -40,7 +44,11 @@ Weekly classes of different levels, starting every four months</li>
             <p class="card-text">Experience in Level I Class required.</p>
             <p class="card-text"><strong>Meditation methods: </strong>Middle way reality contemplation and compassion contemplation.</p>
             <p class="card-text"><strong>Topics covered: </strong>Five Precepts, Buddhist Cosmology, Vegetarianism in Buddhism, The bodhisattva ideal - the six paramitas: perfection of charity, morality, tolerance, diligence, meditation, and prajna wisdom.</p>
-            <a class="myButton" href="/meditate/intermediate">Intermediate</a>
+            {% if classauth.1 == 0 %}
+            <a class="myButton" href="/meditate/intermediate/signup">Sign Up Intermediate</a>
+            {% else %}
+            <a class="yesButton" href="/myclasses/meditate/intermediate/material">See Class</a>
+            {% endif %}
           </div>
         </div>
         <div class="card">
@@ -51,7 +59,11 @@ Weekly classes of different levels, starting every four months</li>
             <p class="card-text">Experience in Level I and Level II Classes required.</p>
             <p class="card-text"><strong>Meditation methods: </strong>Continuation of previous methods.</p>
             <p class="card-text"><strong>Buddhist Scripture: </strong>The Treatise on the Hundred Dharmas: A Gate to Understanding the Mahayana.</p>
-            <a class="myButton" href="/meditate/advanced">Advanced</a>
+            {% if classauth.2 == 0 %}
+            <a class="myButton" href="/meditate/advanced/signup">Sign Up Advanced</a>
+            {% else %}
+            <a class="yesButton" href="/myclasses/meditate/advanced/material">See Class</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -63,7 +75,11 @@ Weekly classes of different levels, starting every four months</li>
             <h4 class="card-header">Children Meditation Class (AWESOME YOUTH)</h4>
             <p class="card-text">For children ages 4-12. Parents are encouraged to join. No prior meditation experience needed.</p>
             <p class="card-text">This class is designed for children ages 4-12 to discover their inner wisdom and develop positive outlook on life. The creatively designed curriculum includes meditation instructions, Dharma talks, Zen stories, movies, character-building activities, field trips, and more. Students learn to sharpen their awareness and concentration and to appreciate the gifts of this world.</p>
-            <a class="myButton" href="/meditate/intermediate"></a>
+            {% if classauth.3 == 0 %}
+            <a class="myButton" href="/meditate/children/signup">Sign Up Children</a>
+            {% else %}
+            <a class="yesButton" href="/myclasses/meditate/children/material">See Class</a>
+            {% endif %}
           </div>
         </div>
     </div>

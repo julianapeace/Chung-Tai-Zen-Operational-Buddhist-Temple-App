@@ -6,6 +6,41 @@
       <a class="sbButton" href="">Volunteer</a>
     </div>
   </div>
+
+<h1>Donation</h1>
+
+<form action="/charge" method="post" id="payment-form">
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- a Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display Element errors -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+
+  <button>Submit Payment</button>
+</form>
+
+
+<form method="post">
+  <div id="option1" class="group">asdf</div>
+  <div id="option2" class="group">kljh</div>
+  <div id="option3" class="group">zxcv</div>
+  <div id="option4" class="group">qwerty</div>
+  <select id="selectMe">
+    <option value="option1">option1</option>
+    <option value="option2">option2</option>
+    <option value="option3">option3</option>
+    <option value="option4">option4</option>
+  </select>
+  <button class="myButton" type="submit">Sign up</button>
+</form>
+
+
 {% endblock %}
 align-items: center = is like the y axis
 Justify-content: center = center it in the div. like the x axis.

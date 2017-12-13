@@ -49,7 +49,7 @@ class Profile(models.Model):
     email_confirmed = models.BooleanField(default=False)
     # other fields...
     def __str__(self):
-        name = self.user.username + 'profile'
+        name = f'{self.user.last_name}, {self.user.first_name}'
         return name
     @receiver(post_save, sender=User)
     def update_user_profile(sender, instance, created, **kwargs):
@@ -57,19 +57,12 @@ class Profile(models.Model):
             Profile.objects.create(user=instance)
         instance.profile.save()
 
-class Volunteer(models.Model):
-    sector_name = models.CharField(max_length=50)
-    user = models.ForeignKey(Profile, null=True)
-
-    def __str__(self):
-        return self.sector_name
-
 class Class(models.Model):
     CLASS_LEVELS = (
-        ('Beginners','Beginners'),
-        ('Intermediate','Intermediate'),
-        ('Advanced','Advanced'),
-        ('Children','Children'),
+        ('beginner','beginner'),
+        ('intermediate','intermediate'),
+        ('advanced','advanced'),
+        ('children','children'),
     )
     name = models.CharField(max_length=50, help_text="level + start date")
     level = models.CharField(max_length=30, choices = CLASS_LEVELS)
@@ -77,4 +70,31 @@ class Class(models.Model):
     end_date = models.DateField()
 
     def __str__(self):
+        # return self.level + self.start_date #to get 'Advanced11012016'
         return self.name
+class Class_Material(models.Model):
+    upload = models.FileField(upload_to='uploads/%Y/%m/%d/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    class_level = models.ForeignKey(Class, null=False)
+    
+class Student(models.Model):
+    class_level = models.ForeignKey(Class, null=False)
+    user = models.ForeignKey(Profile, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f'{self.user} - Student Object'
+
+
+class Volunteer(models.Model):
+    SECTOR = (
+        ('Acolyte', 'Acolyte'),
+        ('Kitchen', 'Kitchen'),
+        ('Dining Hall', 'Dining Hall'),
+        ('Receptionist', 'Receptionist'),
+        ('Tablets', 'Tablets'),
+    )
+    sector_name = models.CharField(max_length=50, choices = SECTOR)
+    user = models.ForeignKey(Profile, null=True)
+
+    def __str__(self):
+        return self.sector_name

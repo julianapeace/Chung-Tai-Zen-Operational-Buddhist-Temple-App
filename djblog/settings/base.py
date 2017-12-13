@@ -33,6 +33,13 @@ STATICFILES_DIRS = [
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
 MAILGUN_KEY = os.environ.get('MAILGUN_KEY', None)
+STRIPE_LIVE_PUBLIC_KEY = os.environ.get('STRIPE_LIVE_PUBLIC_KEY', None)
+STRIPE_LIVE_SECRET_KEY = os.environ.get('STRIPE_LIVE_SECRET_KEY', None)
+STRIPE_TEST_PUBLIC_KEY = os.environ.get('STRIPE_TEST_PUBLIC_KEY', None)
+STRIPE_TEST_SECRET_KEY = os.environ.get('STRIPE_TEST_SECRET_KEY', None)
+STRIPE_LIVE_MODE = False
+
+
 
 ALLOWED_HOSTS = []
 
@@ -55,6 +62,7 @@ INSTALLED_APPS = [
 
     'blog',
     'temple',
+    'djstripe',
     'rest_framework',
     'graphene_django',
 ]
@@ -143,6 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 

@@ -6,13 +6,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-2">
-      <h1 class="header-tag">Beginner's Meditation Class</h1>
-      <div class="little-monk">
-        <img class="card-img-top" src="{% static 'img/little-monk.png'%}" alt="Chung Tai Zen Center Houston Beginner Free Meditation Class">
-      </div>
+      <h1 class="header-tag">Beginner's Material Page</h1>
     </div>
     <div class="col-lg-10">
-      Beginner
+      <form class="form" action="" method="post">
+        <h2><strong>Sign Up </stromg>Beginners Meditation Class</h2>
+        {% csrf_token %}
+        {{ form }}
+        <hr>
+        <input type="submit" value="OK">
+      </form>
     </div>
   </div>
 </div>
