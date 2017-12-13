@@ -39,18 +39,13 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="DanaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dana</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="DanaDropdown">
-                <a class="dropdown-item" href="/volunteer">Volunteer</a>
-                <a class="dropdown-item" href="/donate">Donation</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="AboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="AboutDropdown">
-                <a class="dropdown-item" href="/about">History</a>
-                <a class="dropdown-item" href="/contact">Contact Us</a>
-                <a class="dropdown-item" href="/masters">Masters</a>
+              <a class="nav-link dropdown-toggle" href="" id="ClassesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classes</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ClassesDropdown">
+                <a class="dropdown-item" href="/meditate">All Classes</a>
+                <a class="dropdown-item" href="/meditate/beginner">Beginners</a>
+                <a class="dropdown-item" href="/meditate/intermediate">Intermediate</a>
+                <a class="dropdown-item" href="/meditate/advanced">Advanced</a>
+                <a class="dropdown-item" href="/meditate/children">Children</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -62,13 +57,18 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="ClassesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classes</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ClassesDropdown">
-                <a class="dropdown-item" href="/meditate">All Classes</a>
-                <a class="dropdown-item" href="/meditate/beginner">Beginners</a>
-                <a class="dropdown-item" href="/meditate/intermediate">Intermediate</a>
-                <a class="dropdown-item" href="/meditate/advanced">Advanced</a>
-                <a class="dropdown-item" href="/meditate/children">Children</a>
+              <a class="nav-link dropdown-toggle" href="" id="AboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="AboutDropdown">
+                <a class="dropdown-item" href="/about">History</a>
+                <a class="dropdown-item" href="/contact">Contact Us</a>
+                <a class="dropdown-item" href="/masters">Masters</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="DanaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dana</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="DanaDropdown">
+                <a class="dropdown-item" href="/volunteer">Volunteer</a>
+                <a class="dropdown-item" href="/donate">Donation</a>
               </div>
             </li>
             {% if user.is_authenticated %}

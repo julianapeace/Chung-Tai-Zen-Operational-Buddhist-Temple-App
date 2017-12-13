@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from blog.models import Post, Publication
+from django.contrib.auth.models import User
+
 class PostSerializer(serializers.ModelSerializer):
   author_id = serializers.IntegerField(required=True)
   blog_id = serializers.IntegerField(required=True)
@@ -22,3 +24,11 @@ class PubSerializer(serializers.ModelSerializer):
   def create(self, validated_data):
     print(validated_data)
     return Publication.objects.create(**validated_data)
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email')
+    def create(self, validated_data):
+        print(validated_data)
+        return User.objects.create(**validated_data)

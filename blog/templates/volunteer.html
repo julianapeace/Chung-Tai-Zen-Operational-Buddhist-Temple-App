@@ -12,12 +12,51 @@
     </div>
     <div class="col-lg-10 col-md-10 col-sm-12">
 
-      <div class="form">
+      <div class="content-background">
         <form action="" method="post">{% csrf_token %}
             {{ form.as_p }}
             {# form.sector_name #}
-            <button class="myButton" type="submit">Sign up</button>
+            <!-- <button class="myButton" type="submit">Sign up</button> -->
         </form>
+        <div class="" style="margin: 0 auto;">
+
+
+        <div class="card w-75">
+        <div class="card-body">
+          <h4 class="card-title">Acolyte</h4>
+          <p class="card-text">Support ceremonies</p>
+          <a href="/volunteer/acolyte" class="myButton">Sign Up Acolyte</a>
+        </div>
+      </div>
+      <div class="card w-75">
+      <div class="card-body">
+        <h4 class="card-title">Receptionist</h4>
+        <p class="card-text">Receptionists are the first face for newcomers and thus, vital to represent chungtai. Volunteers welcome newcomers and answer phone calls. </p>
+        <a href="/volunteer/receptionist" class="myButton">Sign Up Receptionist</a>
+      </div>
+    </div>
+    <div class="card w-75">
+    <div class="card-body">
+      <h4 class="card-title">Kitchen</h4>
+      <p class="card-text">Chungtai offers three free meals a day to the public. Volunteers in the kitchen take shifts cooking various vegetarian meals. </p>
+      <a href="/volunteer/kitchen" class="myButton">Sign Up Kitchen</a>
+    </div>
+  </div>
+  <div class="card w-75">
+  <div class="card-body">
+    <h4 class="card-title">Dining Hall</h4>
+    <p class="card-text">Chungtai offers three free meals a day to the public. Volunteers in the Dining Hall are in charge of leading members during mealtime in an efficient flow. </p>
+    <a href="/volunteer/dining_hall" class="myButton">Sign Up Dining Hall</a>
+  </div>
+</div>
+<div class="card w-75">
+<div class="card-body">
+  <h4 class="card-title">Tablets</h4>
+  <p class="card-text">Tablets are handwritten for every ceremony. Volunteers must be able to write legibly in both Chinese and English. </p>
+  <a href="/volunteer/tablets" class="myButton">Sign Up Tablets</a>
+</div>
+</div>
+</div>
         <!-- <form method="post">
           <div class="form-group">
             <label for="sector">Sector</label>

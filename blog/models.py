@@ -76,7 +76,10 @@ class Class_Material(models.Model):
     upload = models.FileField(upload_to='uploads/%Y/%m/%d/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     class_level = models.ForeignKey(Class, null=False)
-    
+
+    def __str__(self):
+        return self.upload.name
+
 class Student(models.Model):
     class_level = models.ForeignKey(Class, null=False)
     user = models.ForeignKey(Profile, null=True)

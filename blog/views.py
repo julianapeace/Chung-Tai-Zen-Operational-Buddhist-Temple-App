@@ -8,7 +8,7 @@ from django.views.generic import CreateView #for VolunteerForm Class
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from blog.models import Post, Profile, Student, Class, Volunteer
+from blog.models import Post, Profile, Student, Class, Volunteer, Class_Material
 from blog.serializer import PostSerializer
 from blog.forms import SignUpForm, MailForm, BeginnerClassForm, VolunteerForm, ProfileForm
 from blog.tokens import account_activation_token
@@ -127,14 +127,23 @@ def my_classes(request):
     classes = []
     for i in q:
         classes.append([i.class_level, i.class_level.level])
-    print(classes)
+    print('Classes Results: ',classes)
 
+    #get volunteer sector_name
     q = Volunteer.objects.filter(user__user=theID)
     volunteer = []
     for i in q:
         volunteer.append([i.sector_name])
-    print(volunteer)
-    return render(request, 'myclasses.html', {'classes':classes, 'volunteer': volunteer})
+    print('Volunteer Results: ',volunteer)
+
+    material = []
+    for j in classes:
+        q = Class_Material.objects.filter(class_level__level = j[1])
+        for i in q:
+            material.append(i)
+    print('Material Results:', material)
+
+    return render(request, 'myclasses.html', {'classes':classes, 'volunteer': volunteer, 'material':material})
 
 @login_required
 def meditate_classes_material(request, slug):
@@ -148,12 +157,27 @@ def meditate_classes_material(request, slug):
     elif slug == 'children':
         return render(request, 'meditate/children.html')
 
+@login_required
 class VolunteerView(CreateView):
     model = Volunteer
     form_class = VolunteerForm
     template_name = 'volunteer.html'
     success_url = '/success'
     # success_url = '/myclasses'
+def volunteer(request):
+    return render(request, 'volunteer.html')
+def createVolunteer(slug, theID):
+    sector_name = slug.title()
+    v = Profile.objects.get(user=theID)
+    return Volunteer.objects.create(sector_name=sector_name, user=v)
+
+@login_required
+def volunteer_signup(request,slug):
+    if request.user.is_authenticated():
+        theID = request.user.id
+        createVolunteer(slug,theID)
+        print('Volunteer is added to: ',slug)
+    return redirect('myclasses')
 
 class ProfileView(CreateView):
     model = Profile

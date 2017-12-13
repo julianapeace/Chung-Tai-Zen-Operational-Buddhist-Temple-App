@@ -34,3 +34,4 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Class_Material)
 class Class_MaterialAdmin(admin.ModelAdmin):
     list_display = ('id', 'upload', 'class_level')
+    list_filter = ('class_level',)
