@@ -23,17 +23,36 @@ This project aims to provide a platform for Chung Tai Zen Center to capture stud
 
 ### Stretch Goals
 - [ ] Has ability for students to check-in via iPad at the front desk
-- [ ] Admin can send mass email notifications
+- [x] Admin can send mass email notifications
 - [ ] Food page with Yelp API
-- [ ] Draw Your Fortune page
+- [x] Draw Your Fortune page
 - [ ] After ceremonies, members can upload photos
 - [ ] User can see all library books
-- [ ] Users can purchase memorial service and/or ashboxes
-- [ ] Users can donate to Chungtai Zen Center
+- [x] Users can purchase memorial service and/or ashboxes
+- [x] Users can donate to Chungtai Zen Center
 - [ ] Users can book appointments with Shifus
 - [ ] Users can download sutras and chanting audio
 - [ ] Meditation Simulator page with a timer functionality
 - [ ] Meditation Simulator uses voice recognition: "Alexa, start meditation 30 minutes."
+
+------
+
+### How to Run this App
+ - Git clone the project repository
+ - Create and start a virtual environment
+ - Pip install requirements.txt with `pip install -r requirements.txt`
+ - create a file named "secrets.sh"
+ - touch secrets.sh (mac and linux)
+ - obtain a secret from MiniWebTool key and add to secrets.sh
+ - export SECRET_KEY='<secret_key>'
+ - add secrets.sh to .gitignore file
+ - Obtain access_token and secret_key and store in secrets.sh
+ - Setup a Postgres DB, create user & database
+ - Run `python manage.py migrate`
+ - Create admin account with `python manage.py createsuperuser`
+ - To start the server, run `python manage.py runserver`
+ - Open localhost:8000 on your browser to view the app.
+ - [Lost? More details here](https://stackoverflow.com/questions/37094032/how-to-run-cloned-django-project)
 
 -----
 ## Developer's Journal
@@ -55,77 +74,8 @@ Today I made a lot of progress on the front-end. Added a pop of color, little UI
 I closing today on a pause. I'm having trouble wrapping my head around how to organize the models. What is the best way to organize it so that it'll grow easily in the long run?
 #### December 9
 Yay! I figured out django's model and query language. Students can successfully sign up for a class =)
-This is the order in which I've drawn up the steps:
 #### December 10
-Lesson learned: multiple frameworks don't play nicely together.
-
-
-Fork and clone the repo
-Source a virtual environment
-Pip install requirements.txt
-Obtain access_token and secret_key and store in secrets.sh
-Setup a Postgres DB, create user & database
-Migrate (?) - This is where I get stuck!
-I tried migrating the app but there are no migrations to apply.
-
-up vote
-8
-down vote
-accepted
-First off, you are getting that error because you are starting a project within the same directory as the cloned project, this directory already contains an app with the name ig_miner_app hence the name conflict.
-
-As regards steps to running the project by other users , this should work.
-
-clone the project
-
-git clone https://github.com/erinallard/instagram_miner.git
-create and start a a virtual environment
-
-virtualenv env --no-site-packages
-
-source env/bin/activate
-Install the project dependencies:
-
-pip install -r requirements.txt
-create a file named "secrets.sh"
-
-touch secrets.sh (mac and linux)
-
-obtain a secret from MiniWebTool key and add to secrets.sh
-
-export SECRET_KEY='<secret_key>'
-add secrets.sh to .gitignore file
-
-create a postgres db and add the credentials to settings.py
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_name',
-        'USER': 'name',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-then run
-
-python manage.py migrate
-create admin account
-
-python manage.py createsuperuser
-then
-
-python manage.py makemigrations ig_miner_app
-to makemigrations for the app
-
-then again run
-
-python manage.py migrate
-to start the development server
-
-python manage.py runserver
-and open localhost:8000 on your browser to view the app.
-
-I believe this should get the app up and running on others' machines. Let me know if you get stuck on any of these steps so I make edits, if not, you can just use it and add any other relevant info I might not have added.
-https://stackoverflow.com/questions/37094032/how-to-run-cloned-django-project
+Lesson learned: multiple frameworks don't play nicely together. Something mysterious is overriding all of my JS code.
+#### December 12
+Putting on the final touches for the presentation by fleshing out the content with better front-end design. 
+-----
