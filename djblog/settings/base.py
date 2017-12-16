@@ -41,7 +41,9 @@ STRIPE_LIVE_MODE = False
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ctz.herokuapp.com',
+]
 
 
 # Application definition
