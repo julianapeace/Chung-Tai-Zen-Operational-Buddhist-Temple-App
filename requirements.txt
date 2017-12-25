@@ -1,6 +1,7 @@
 certifi==2017.11.5
 chardet==3.0.4
 click==6.7
+dj-database-url==0.4.2
 dj-stripe==1.0.0.post1
 Django==1.11.7
 django-dotenv==1.4.1
@@ -11,7 +12,6 @@ django-uwsgi==0.2.1
 djangorestframework==3.7.3
 djzen==17.7.1
 graphene==2.0.1
--e git://github.com/pizzapanther/graphene-django.git@5661db88d1ef0f75a5a4810defcb3284ccd9da51#egg=graphene_django
 graphql-core==2.0
 graphql-relay==0.4.5
 gunicorn==19.7.1
@@ -21,6 +21,7 @@ jsonfield==2.0.2
 Markdown==2.6.9
 pip-save==0.2.0
 promise==2.1
+psycopg2==2.7.3.2
 python-doc-inherit==0.3.0
 pytz==2017.3
 requests==2.18.4
@@ -33,3 +34,4 @@ typing==3.6.2
 urllib3==1.22
 uWSGI==2.0.15
 whitenoise==3.3.1
+-e git+git://github.com/pizzapanther/graphene-django.git@5661db88d1ef0f75a5a4810defcb3284ccd9da51#egg=graphene_django
