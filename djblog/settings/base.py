@@ -55,7 +55,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'material.theme.bluegrey',
     'material',
-    'material.frontend',
+    # 'material.frontend',
     'material.admin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -102,6 +102,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                # 'material.frontend.context_processors.modules',
             ],
         },
     },
@@ -121,7 +122,7 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 # }
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(
-  default='postgres://postgres:d268ec684f8dab4cf87018699ca4dd33@dokku-postgres-ctzen:5432/ctzen')
+  default='postgres://postgres:postgres@localhost:5432/ctzen')
 # DEV: postgres://postgres:postgres@localhost:5432/ctzen
 # PROD: postgres://postgres:d268ec684f8dab4cf87018699ca4dd33@dokku-postgres-ctzen:5432/ctzen
 # postgres://USER:PASSWORD@HOST:PORT/NAME

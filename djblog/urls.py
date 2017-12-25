@@ -23,11 +23,11 @@ import blog.views
 import temple.views
 
 #Django-material front-end starter templates
-from material.frontend import urls as frontend_urls
+# from material.frontend import urls as frontend_urls
 
 urlpatterns = [
     zen_url('admin/', admin.site.urls),
-    zen_url('', include(frontend_urls)),
+    # zen_url('', include(frontend_urls)),
     zen_url('', blog.views.index, name='home'),
     zen_url('masters/', blog.views.masters),
     zen_url('meditate/', blog.views.meditate, name='meditate'),
