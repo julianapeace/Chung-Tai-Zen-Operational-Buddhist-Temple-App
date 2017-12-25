@@ -24,6 +24,7 @@ This project aims to provide a platform for Chung Tai Zen Center to capture stud
 ### Stretch Goals
 - [ ] Has ability for students to check-in via iPad at the front desk
 - [x] Admin can send mass email notifications
+- [x] Implement GraphQL
 - [ ] Food page with Yelp API
 - [x] Draw Your Fortune page
 - [ ] After ceremonies, members can upload photos
@@ -77,5 +78,5 @@ Yay! I figured out django's model and query language. Students can successfully 
 #### December 10
 Lesson learned: multiple frameworks don't play nicely together. Something mysterious is overriding all of my JS code.
 #### December 12
-Putting on the final touches for the presentation by fleshing out the content with better front-end design. 
+Putting on the final touches for the presentation by fleshing out the content with better front-end design.
 -----

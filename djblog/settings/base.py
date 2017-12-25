@@ -42,6 +42,8 @@ STRIPE_LIVE_MODE = False
 
 
 ALLOWED_HOSTS = [
+    'localhost',
+    'localhost:8000',
     'ctz.herokuapp.com',
 ]
 
