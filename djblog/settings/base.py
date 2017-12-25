@@ -45,6 +45,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'localhost:8000',
     'ctz.herokuapp.com',
+    'chungtaizen.com',
 ]
 
 
