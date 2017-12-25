@@ -1,0 +1,49 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+certifi = "==2017.11.5"
+chardet = "==3.0.4"
+click = "==6.7"
+dj-stripe = "==1.0.0.post1"
+django = "==1.11.7"
+django-dotenv = "==1.4.1"
+django-filter = "==1.1.0"
+django-material = "==1.1.1"
+django-polymorphic = "==1.3"
+django-uwsgi = "==0.2.1"
+djangorestframework = "==3.7.3"
+djzen = "==17.7.1"
+graphene = "==2.0.1"
+graphene-django = {git = "git://github.com/pizzapanther/graphene-django.git", editable = true, ref = "5661db88d1ef0f75a5a4810defcb3284ccd9da51"}
+graphql-core = "==2.0"
+graphql-relay = "==0.4.5"
+gunicorn = "==19.7.1"
+idna = "==2.6"
+"iso8601" = "==0.1.12"
+jsonfield = "==2.0.2"
+markdown = "==2.6.9"
+pip-save = "==0.2.0"
+promise = "==2.1"
+python-doc-inherit = "==0.3.0"
+pytz = "==2017.3"
+requests = "==2.18.4"
+rx = "==1.6.0"
+singledispatch = "==3.4.0.3"
+stripe = "==1.75.3"
+tqdm = "==4.19.5"
+typing = "==3.6.2"
+"urllib3" = "==1.22"
+uwsgi = "==2.0.15"
+whitenoise = "==3.3.1"
+dj-database-url = "*"
+"psycopg2" = "*"
+
+
+[dev-packages]
+

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
@@ -112,13 +113,18 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(
+  default='postgres://postgres:d268ec684f8dab4cf87018699ca4dd33@dokku-postgres-ctzen:5432/ctzen')
+# DEV: postgres://postgres:postgres@localhost:5432/ctzen
+# PROD: postgres://postgres:d268ec684f8dab4cf87018699ca4dd33@dokku-postgres-ctzen:5432/ctzen
+# postgres://USER:PASSWORD@HOST:PORT/NAME
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
