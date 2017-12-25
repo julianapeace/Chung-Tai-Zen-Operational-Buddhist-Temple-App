@@ -182,3 +182,4 @@ EMAIL_HOST_USER = 'postmaster@mg.chungtaizen.com'
 EMAIL_HOST_PASSWORD = MAILGUN_KEY
 #EMAIL_USE_TLS controls whether a secure connection is used
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'ChungTaiZen@chungtaizen.com'
