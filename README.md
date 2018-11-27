@@ -1,6 +1,8 @@
 # Chung Tai Zen Center
 ## App for chung tai center.
 
+ ![Laser Dalai Lama](https://media.giphy.com/media/fLU9swtAFMtrO/giphy.gif) 
+
 ### [Juliana Mei](http://www.julianamei.com)'s submission to [DigitalCrafts](http://www.DigitalCrafts.com)' individual project week.
 ------
 
